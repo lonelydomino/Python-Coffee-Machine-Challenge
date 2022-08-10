@@ -69,8 +69,7 @@ while(done == False):
     report()
   else:
     drink = MENU[choice]
-    cash['money'] = process_coins()
-    # print(f"money is {money} and drink cost is {drink['cost']}")
+    cash['money'] += process_coins()
     if check_resources(drink['ingredients']) and cash['money'] >= drink['cost']:
       deduct_resources(drink['ingredients'], drink['cost'])
       print(f"Here is your {drink}!")
